@@ -1,7 +1,0 @@
-D:\homework\homework\exercise2\obj\Debug\exercise2.csprojAssemblyReference.cache
-D:\homework\homework\exercise2\obj\Debug\exercise2.csproj.CoreCompileInputs.cache
-D:\homework\homework\exercise2\bin\Debug\exercise2.exe.config
-D:\homework\homework\exercise2\bin\Debug\exercise2.exe
-D:\homework\homework\exercise2\bin\Debug\exercise2.pdb
-D:\homework\homework\exercise2\obj\Debug\exercise2.exe
-D:\homework\homework\exercise2\obj\Debug\exercise2.pdb
