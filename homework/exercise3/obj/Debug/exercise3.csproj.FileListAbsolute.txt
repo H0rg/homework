@@ -1,0 +1,7 @@
+D:\homework\homework\exercise3\bin\Debug\exercise3.exe.config
+D:\homework\homework\exercise3\bin\Debug\exercise3.exe
+D:\homework\homework\exercise3\bin\Debug\exercise3.pdb
+D:\homework\homework\exercise3\obj\Debug\exercise3.csprojAssemblyReference.cache
+D:\homework\homework\exercise3\obj\Debug\exercise3.csproj.CoreCompileInputs.cache
+D:\homework\homework\exercise3\obj\Debug\exercise3.exe
+D:\homework\homework\exercise3\obj\Debug\exercise3.pdb
