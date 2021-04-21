@@ -21,6 +21,25 @@ namespace HomeworkL4
 {
     static class Start
     {
+        static void Method(int[] a)
+        {
+
+            // б) Добавьте статический метод для считывания массива из текстового файла.
+            // Метод должен возвращать массив целых чисел;
+            // в)*Добавьте обработку ситуации отсутствия файла на диске.
+            try
+            {
+                StreamReader sr = new StreamReader("text.txt");
+                for (int i = 0; i < a.Length; i++)
+                {
+                    a[i] = int.Parse(sr.ReadLine());
+                }
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+            }
+        }
         static public void Foo(int arrayLenght)
         {
             int[] array = new int[arrayLenght];
@@ -53,27 +72,6 @@ namespace HomeworkL4
     }
     class Program
     {
-        static void Method(int[] a)
-        {
-            //
-            //
-            // б) Добавьте статический метод для считывания массива из текстового файла.
-            // Метод должен возвращать массив целых чисел;
-            // в)*Добавьте обработку ситуации отсутствия файла на диске.
-            try
-            {
-                StreamReader sr = new StreamReader("text.txt");
-                for (int i = 0; i < a.Length; i++)
-                {
-                    a[i] = int.Parse(sr.ReadLine());
-                }
-            }
-            catch (Exception exc)
-            {
-                Console.WriteLine(exc.Message);
-            }
-        }
-
         static void Main(string[] args)
         {
             Start.Foo(20);
