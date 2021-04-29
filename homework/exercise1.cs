@@ -3,50 +3,46 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime;
 
-
-/*
- * 1. Создать программу, которая будет проверять корректность ввода логина. Корректным логином будет строка от 2 до 10 символов, содержащая только буквы латинского алфавита или цифры, при этом цифра не может быть первой:
- * а) без использования регулярных выражений;
- * 
- * (c) Кострецов Алексей
- * 
- */
+//  1.    Изменить программу вывода таблицы функции так, 
+//    чтобы можно было передавать функции типа double (double, double). 
+//    Продемонстрировать работу на функции с функцией a*x^2 и функцией a*sin(x).
+//
+// (c) Кострецов Алексей
 
 namespace exercise1
 {
+    delegate double MyDel(double a, double b);
     class Program
     {
-        static bool testLogin(string login)
+        static double f(double a, double x)
         {
-            int maxChar = login.Length;
-            if (maxChar >= 2 && maxChar <= 10)
-            {
-                if (login[0] >= '0' && login[0] <= '9')
-                {
-                    Console.WriteLine("Некорректный логин.");
-                }
-                else
-                {
-                    for (int i = 0; i < login.Length; i++)
-                    {
-                        if (login[i] >= 'a' && login[i] <= 'z' || login[i] >= 'A' && login[i] <= 'Z' || login[i] >= '0' && login[i] <= '9') continue;
-                        else
-                        {
-                            Console.WriteLine("Некорректный логин.");
-                            return false;
-                        }
-                    }
-                }
-            }
-            else Console.WriteLine("Некорректный логин.");
-            return false;
+            return a * (x * x);
+        }
+        static double g(double a, double x)
+        {
+            return a * (Math.Sin(x));
+        }
+        static void enterNumbers(out double a, out double b)
+        {
+            Console.WriteLine("Enter a ..");
+            a = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter b .."); 
+            b = int.Parse(Console.ReadLine());
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите логин: ");
-            string login = Console.ReadLine();
-            testLogin(login);
+            double a, b;
+            enterNumbers(out a,out b);
+            MyDel fynxFisrt = new MyDel(f);
+            MyDel fynxSecond = new MyDel(g);
+
+            Console.WriteLine($"a * x ^ 2 = {fynxFisrt(a, b)}");
+            Console.WriteLine($"a * sin(x) = {fynxSecond(a, b)}");
+            Console.ReadLine();
+
         }
     }
 }
